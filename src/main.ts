@@ -65,6 +65,7 @@ world.beforeEvents.chatSend.subscribe((event) => {
         minScore: team,
       },
     ],
+    excludeTags: ["op"],
   };
   const opQuery: EntityQueryOptions = {
     tags: ["op"],
