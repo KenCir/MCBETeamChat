@@ -15,12 +15,6 @@ export default {
         messageFormat: "§f[§aBlueTeam§f]<{player.name}> {message}",
         score: 2,
       },
-      {
-        name: "aqua",
-        nameTagFormat: "§3AquaTeam\n§f{player.name}",
-        messageFormat: "§f[§3AquaTeam§f]<{player.name}> {message}",
-        score: 3,
-      },
     ],
   },
 };
