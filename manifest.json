@@ -4,7 +4,7 @@
     "name": "Team Chat",
     "description": "チームチャット",
     "uuid": "f8fff346-c3be-4b30-b3b0-3eba8eed8855",
-    "version": [1, 0, 0],
+    "version": [2, 0, 0],
     "min_engine_version": [1, 20, 10]
   },
   "modules": [
@@ -13,7 +13,7 @@
       "language": "javascript",
       "uuid": "f165233e-0716-416a-9973-5cae17261161",
       "entry": "scripts/main.js",
-      "version": [1, 0, 0]
+      "version": [2, 0, 0]
     }
   ],
   "dependencies": [
