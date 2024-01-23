@@ -1,5 +1,6 @@
 export default {
   opTag: "op",
+  excludeMessagePrefix: ";",
   team: {
     scoreboard: "team",
     teams: [

@@ -25,7 +25,7 @@ function setupTeam(): void {
     for (const player of players) {
       player.nameTag = team.nameTagFormat.replaceAll(
         "{player.name}",
-        player.name,
+        player.name
       );
     }
   }
@@ -65,7 +65,8 @@ system.afterEvents.scriptEventReceive.subscribe((event) => {
 });
 
 world.beforeEvents.chatSend.subscribe((event) => {
-  if (!systemFlag) return;
+  if (!systemFlag || event.message.startsWith(config.excludeMessagePrefix))
+    return;
 
   const teamScoreboard = world.scoreboard.getObjective(config.team.scoreboard);
   if (!teamScoreboard) return;
@@ -90,7 +91,7 @@ world.beforeEvents.chatSend.subscribe((event) => {
     player.sendMessage(
       teamConfig.messageFormat
         .replaceAll("{player.name}", event.sender.name)
-        .replaceAll("{message}", event.message),
+        .replaceAll("{message}", event.message)
     );
   }
 
@@ -101,7 +102,7 @@ world.afterEvents.playerSpawn.subscribe((event) => {
   if (!event.initialSpawn) return;
   if (systemFlag) {
     const teamScoreboard = world.scoreboard.getObjective(
-      config.team.scoreboard,
+      config.team.scoreboard
     );
     if (!teamScoreboard) return;
 
@@ -118,7 +119,7 @@ world.afterEvents.playerSpawn.subscribe((event) => {
 
     event.player.nameTag = teamConfig.nameTagFormat.replaceAll(
       "{player.name}",
-      event.player.name,
+      event.player.name
     );
   } else {
     event.player.nameTag = event.player.name;
